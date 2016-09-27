@@ -5,7 +5,7 @@
 
 Для ознакомления с требованиями по стилю кода прейдите в нужный раздел:
 
-[PHP](/code/php)
-[HTML](/code/html)
-[JS](/code/js)
-[LESS](/code/css)
+* [PHP](php.md)
+* [HTML](html.md)
+* [JS](js.md)
+* [LESS](css.md)
