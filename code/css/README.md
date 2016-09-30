@@ -72,18 +72,15 @@
 **Цель** — лучшая читаемость, проще найти и поправить свойство.
 
 Допускается исключение для случаев, когда стиль описвается одним классом и одним свойством. В этом случае следует отделять пробелами скобки от свойства.
-<div class="content">
-	<div class="col col-mb-12 col-6 col-bad">
-		<div class="text-error h5">Плохо</div>        
-		<div class="error-block p20 equal">
-			<pre><code class="nohighlight">.normal {font-weight: normal; font-style: normal; text-decoration: none;}
-			.p10{padding:10px}</code></pre>
-		</div>
-	</div>
-	<div class="col col-mb-12 col-6 col-good">
-		<div class="text-success h5">Хорошо</div>
-		<div class="success-block p20 equal">
-			<pre><code class="nohighlight">.normal {
+### Плохо
+```css
+.normal {font-weight: normal; font-style: normal; text-decoration: none;}
+			.p10{padding:10px}
+```			
+		
+### Хорошо
+```css 
+.normal {
 	font-weight: normal;
 	font-style: normal;
 	text-decoration: none;
@@ -92,46 +89,35 @@
 		color: red;
 	}
 }
-.p10 { padding:10px; }</code></pre>
-		</div>
-	</div>
-</div>
+.p10 { padding:10px; }
+```
 
 ### Каждый селектор — на отдельной строке
 **Цель** — лучшая читаемость, проще найти селектор.
-<div class="content">
-	<div class="col col-mb-12 col-6 col-bad">
-		<div class="text-error h5">Плохо</div>        
-		<div class="error-block p20 equal">
-			<pre><code class="nohighlight">.class, .class1, .class2, .class3 {
+###Плохо
+```css
+.class, .class1, .class2, .class3 {
 	color: red;
-}</code></pre>
-		</div>
-	</div>
-	<div class="col col-mb-12 col-6 col-good">
-		<div class="text-success h5">Хорошо</div>
-		<div class="success-block p20 equal">
-			<pre><code class="nohighlight">.class,
+}
+```
+###Хорошо
+```css
+.class,
 .class1,
 .class2,
 .class3 {
 	color: red;
-}</code></pre>
-		</div>
-	</div>
-</div>
+}
+```
 
 
 ### Группировка правил
 **Цель** — уменьшение длины селекторов, уменьшение веса CSS-файла, как следствие — ускорение обработки сыы браузером.
 При этом в обязательном порядке после закрывающей фигурной скобки проставляем комментарий с текстом, соответствующим имени селектора в получаемом css-файле. <br>Это необходимо для лёгкого поиска нужного селектора при отладке и доработке вёрстки.
 
-
-<div class="content">
-	<div class="col col-mb-12 col-6 col-bad">
-		<div class="text-error h5">Плохо</div>        
-		<div class="error-block p20 equal">
-			<pre><code class="nohighlight">// LESS
+###Плохо
+```css
+// LESS
 .class {
 	color: blue;
 	.class-red {
@@ -167,13 +153,11 @@
 }
 .class .class-red .class-green .class-yellow .class-orange {
 	color: orange;
-}</code></pre>
-		</div>
-	</div>
-	<div class="col col-mb-12 col-6 col-good">
-		<div class="text-success h5">Хорошо</div>
-		<div class="success-block p20 equal">
-			<pre><code class="nohighlight">// LESS
+}
+```
+#Хорошо
+```css
+// LESS
 .class {
 	color: blue;
 
@@ -209,10 +193,8 @@
 }
 .class-orange {
 	color: orange;
-}</code></pre>
-		</div>
-	</div>
-</div>
+}
+```
 
 ### Скобки, отступы, порядок следования свойств и прочее
 
@@ -235,11 +217,9 @@
 - Цвет в формате HEX пишем в нижнем регистре `#fff`, `#f94568`.
 - Ни при каких обстоятельствах не используем `@import` в CSS-файлах!
 
-<div class="content">
-	<div class="col col-mb-12 col-6 col-bad">
-		<div class="text-error h5">Плохо</div>        
-		<div class="error-block p20 equal">
-			<pre><code class="nohighlight">.class,.class1,.class2,.class3{
+###Плохо
+```css
+.class,.class1,.class2,.class3{
 	color: red
 	&, &.mod {padding:10px;display:block;color:#FFFFFF}}
 .class1
@@ -249,14 +229,11 @@
   padding:0px 0px 0px 0px;
   box-shadow:inset 0px 0 0 2px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow:inset 0px 0 0 2px rgba(0, 0, 0, 0.5) }
-			</code></pre>
-		</div>
-	</div>
-
-	<div class="col col-mb-12 col-6 col-good">
-		<div class="text-success h5">Хорошо</div>
-		<div class="success-block p20 equal">
-			<pre><code class="nohighlight">.class,
+```
+			
+###Хорошо
+```css
+.class,
 .class1,
 .class2,
 .class3 {
@@ -275,45 +252,36 @@
   padding: 0;
   -webkit-box-shadow: inset 0 0 0 2px rgba(0,0,0,.5);
   box-shadow: inset 0 0 0 2px rgba(0,0,0,.5);
-}</code></pre>
-		</div>
-	</div>
-</div>
+}
+```
 
 ### Формирование имён селекторов
 Имена классов следует формировать так, что бы из имени можно было понять за что отвечает стиль или для чего предназначен.
 Все имена классов пишем в нижнем регистре, в качестве разделителя слов используем черточку. **.aaa-bbb-ccc {}**
 
 Для классов-помощников используем названия классов, соответствующих аббревиатурам emmet. *Пример таких классов можно наблюдать в файле 90-helpers.less*
-<div class="content">
-	<div class="col col-mb-12 col-6 col-bad">
-		<div class="text-error h5">Плохо</div>        
-		<div class="error-block p20 equal">
-			<pre><code class="nohighlight">.className {
+###Плохо
+```css
+.className {
 	border: solid 1px @gray;
 	padding: 15px;
 	background: lighten(@gray, 50%);
 }
 .block1 { padding: 10px; }
 .mar_b_l { margin-left: 10px; }
-			</code></pre>
-		</div>
-	</div>
+```
 
-	<div class="col col-mb-12 col-6 col-good">
-		<div class="text-success h5">Хорошо</div>
-		<div class="success-block p20 equal">
-			<pre><code class="nohighlight">.gray-border-block {
+### Хорошо
+
+```css
+.gray-border-block {
 	border: solid 1px @gray;
 	padding: 15px;
 	background: lighten(@gray, 50%);
 }
 .p10 { padding: 10px; }
 .ml10 { margin-left: 10px; }
-</code></pre>
-		</div>
-	</div>
-</div>
+```
 
 ### Миксины
 Используем только параметризованные миксины. По возможности задаём значения по умолчанию для параметров миксина.
@@ -324,11 +292,9 @@
 
 Все миксины располагаем в файле 01-mixins.less и снабжаем комментарием по возможности.
 
-<div class="content">
-	<div class="col col-mb-12 col-6 col-bad">
-		<div class="text-error h5">Плохо</div>        
-		<div class="error-block p20 equal">
-			<pre><code class="nohighlight">.mix() {
+### Плохо
+```css
+.mix() {
 	color: @red;
 	background: @btnColor;
 }
@@ -338,14 +304,12 @@
 .class1 {
 	.mix;
 	color: @green;
-}</code></pre>
-		</div>
-	</div>
+}
+```
 
-	<div class="col col-mb-12 col-6 col-good">
-		<div class="text-success h5">Хорошо</div>
-		<div class="success-block p20 equal">
-			<pre><code class="nohighlight">.mix(@color: #f00, @bgColor: #000) {
+###Хорошо
+```css
+.mix(@color: #f00, @bgColor: #000) {
 	color: @color;
 	background: @bgColor;
 }
@@ -354,10 +318,8 @@
 }
 .class1 {
 	.mix(@green);
-}</code></pre>
-		</div>
-	</div>
-</div>
+}
+```
 
 ### Переменные
 
@@ -367,26 +329,19 @@
 
 Хорошим тоном будет выравнивание значений переменный в один столбик.
 
-<div class="content">
-	<div class="col col-mb-12 col-6 col-bad">
-		<div class="text-error h5">Плохо</div>        
-		<div class="error-block p20 equal">
-			<pre><code class="nohighlight">@blue: #3da4cb; // blue 
+###Плохо
+```css
+@blue: #3da4cb; // blue 
 @red: #fe4a49; // red
 @orange: #fed766; // orange
-			</code></pre>
-		</div>
-	</div>
+```
 
-	<div class="col col-mb-12 col-6 col-good">
-		<div class="text-success h5">Хорошо</div>
-		<div class="success-block p20 equal">
-			<pre><code class="nohighlight">@primary:    #3da4cb; // primary 
+###Хорошо
+```css
+@primary:    #3da4cb; // primary 
 @secondary:  #fe4a49; // secondary
-@additional: #fed766; // additional</code></pre>
-		</div>
-	</div>
-</div>
+@additional: #fed766; // additional
+```
 
 
 
