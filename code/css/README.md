@@ -10,11 +10,10 @@
 
 Комментироване LESS кода — его неотъемлимая часть. Без комментариев разобраться в чужом коде порой просто невозможно. Поэтому следует 
 
-<div class="content">
-	<div class="col col-mb-12 col-5 col-bad">
-		<div class="text-error h5">Плохо</div>        
-		<div class="error-block p20 equal">
-			<pre><code class="nohighlight">// Каталог
+### Плохо    
+  
+```css
+// Каталог
 .catalog {
 	&-item {
 		...
@@ -28,13 +27,12 @@
 		...
 	}
 }
-// Тут ещё 500 строк кода</code></pre>
-		</div>
-	</div>
-	<div class="col col-mb-12 col-7 col-good">
-		<div class="text-success h5">Хорошо</div>
-		<div class="success-block p20 equal">
-			<pre><code class="nohighlight">/* =============================
+// Тут ещё 500 строк кода
+```
+
+### Хорошо
+```css
+/* =============================
    Каталог */
 /* ============================= */
 	.catalog {
@@ -52,11 +50,8 @@
 			...
 		} //.basket-item
 	} //.basket
-	// Тут ещё 500 строк кода</code></pre>
-		</div>
-	</div>
-</div>
-
+	// Тут ещё 500 строк кода
+```
 
 
 ## Организация LESS-файлов
